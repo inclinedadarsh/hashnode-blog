@@ -1,111 +1,121 @@
 import Link from 'next/link';
 import { Container } from './container';
-import { useAppContext } from './contexts/appContext';
-import { SocialLinks } from './social-links';
+import logoTypeLight from '../assets/images/logo_type_light.svg'
+import Image from 'next/image';
 
 export const Footer = () => {
-  const { publication } = useAppContext();
-  const PUBLICATION_LOGO = publication.preferences.logo;
+  const FOOTER_LINKS = [
+    {
+      name: 'Courses',
+      links: [
+        {
+          name: 'Data Structures',
+          url: '#',
+        },
+        {
+          name: 'DevOps 101',
+          url: '#',
+        },
+        {
+          name: 'Some Course',
+          url: '#',
+          isNew: true,
+        },
+        {
+          name: 'Git & GitHub',
+          url: '#',
+        },
+        {
+          name: 'Another course',
+          url: '#',
+        },
+      ],
+    },
+    {
+      name: 'Contact',
+      links: [
+        {
+          name: 'YouTube',
+          url: 'https://www.youtube.com/@kunalkushwaha',
+        },
+        {
+          name: 'Twitter',
+          url: 'https://twitter.com/kunalstwt',
+        },
+        {
+          name: 'LinkedIn',
+          url: 'https://www.linkedin.com/in/kunal-kushwaha/',
+        },
+        {
+          name: 'Instagram',
+          url: 'https://www.instagram.com/kunalsig/',
+        },
+      ],
+    },
+    {
+      name: 'Resources',
+      links: [
+        {
+          name: 'Blog',
+          url: '/blog',
+        },
+        {
+          name: 'Newsletter',
+          url: '#',
+        },
+        {
+          name: 'Sponsorships',
+          url: '/sponsorships',
+        },
+        {
+          name: 'Courses',
+          url: '/courses',
+        },
+        {
+          name: 'Discord Server',
+          url: 'https://discord.gg/wemakedevs',
+        },
+      ],
+    },
+  ];
+
   return (
-    <footer className="border-t py-20 dark:border-neutral-800 ">
+    <footer className="pt-10 md:pt-12 lg:pt-14 pb-6 md:pb-8 lg:pb-10 bg-slate-800 text-slate-200">
       <Container className="px-5">
-        {PUBLICATION_LOGO ? (
-          <div className="mb-20 flex w-full flex-row justify-center">
-            <Link
-              href={'/'}
-              aria-label={`${publication.title} home page`}
-              className="flex flex-row items-center gap-5"
-            >
-              <img className="block w-40 md:w-44 lg:w-56" src={PUBLICATION_LOGO} alt={publication.title} />
-            </Link>
+        <div className="flex justify-between items-start gap-20 md:10 flex-col md:flex-row">
+          <Image src={logoTypeLight} alt="Kunal Kushwaha" className="w-56" />
+          <div className="flex gap-16 flex-wrap w-full md:w-[60%]">
+            {FOOTER_LINKS.map((section, key) => (
+              <div key={key} className="space-y-4 grow">
+                <h3 className="text-slate-400 font-semibold text-sm">
+                  {section.name}
+                </h3>
+                <ul className="space-y-3">
+                  {section.links.map((link, key) => (
+                    <li key={key} className="font-medium text-base">
+                      <Link
+                        href={link.url}
+                        className="relative z-0 before:absolute before:z-10 before:w-full before:h-[1px] before:bg-slate-200 before:bottom-0 before:left-0 before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:origin-left"
+                      >
+                        {link.name}
+                      </Link>
+                      {link.isNew && (
+                        <p className="inline-block rounded-full py-0.5 px-2 border border-white/30 bg-white/20 text-white text-xs font-medium ml-2">
+                          New
+                        </p>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-        ) : (
-          <p className="mb-20 text-center text-xl font-semibold text-slate-900 dark:text-slate-50 md:text-4xl">
-            {publication.title}
+        </div>
+        <div className="border-t border-slate-600 flex justify-between flex-wrap pt-8 mt-12 gap-5">
+          <p className="font-medium text-white">Mover faster with Kunal</p>
+          <p className="text-slate-400">
+            © 2024 Kunal Kushwaha. All rights reserved.
           </p>
-        )}
-        <div className="grid w-full grid-cols-3 gap-5 md:grid-cols-6 lg:grid-cols-5">
-          <div className="col-span-1 grid grid-cols-4 gap-5 md:col-span-4 lg:col-span-3">
-            <div className="col-span-full md:col-span-2 lg:col-span-1">
-              <p className="mb-2 font-semibold text-slate-600 dark:text-neutral-200">
-                Courses
-              </p>
-              <ul className="flex flex-col gap-1 text-slate-700 dark:text-neutral-300">
-                <li>
-                  <a href="#" className="hover:underline">
-                    Data Structures
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:underline">
-                    DevOps 101
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:underline">
-                    Git & GitHub
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:underline">
-                    Computer Networks
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="col-span-full md:col-span-2 lg:col-span-1">
-              <p className="mb-2 font-semibold text-slate-600 dark:text-neutral-200">Contact</p>
-              <ul className="flex flex-col gap-1 text-slate-700 dark:text-neutral-300">
-                <li>
-                  <a href="https://www.youtube.com/@kunalkushwaha" className="hover:underline">
-                    YouTube
-                  </a>
-                </li>
-                <li>
-                  <a href="https://twitter.com/kunalstwt" className="hover:underline">
-                    Twitter
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/kunal-kushwaha/" className="hover:underline">
-                    LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/kunalsig/" className="hover:underline">Instagram</a>
-                </li>
-              </ul>
-            </div>
-            <div className="col-span-full md:col-span-2 lg:col-span-1">
-              <p className="mb-2 font-semibold text-slate-600 dark:text-neutral-200">Resources</p>
-              <ul className="flex flex-col gap-1 text-slate-700 dark:text-neutral-300">
-                <li>
-                  <a href="#" className="hover:underline">
-                    Newsletter
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:underline">
-                    Sponsorships
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:underline">
-                    Courses
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:underline">
-                    Discord Server
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="col-span-2 flex flex-col items-end gap-5 text-right text-slate-600 dark:text-neutral-300 md:text-left">
-            <SocialLinks />
-            <p>&copy; 2024 Kunal Kushwaha</p>
-          </div>
         </div>
       </Container>
     </footer>
