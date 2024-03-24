@@ -18,7 +18,9 @@ export const PublicationLogo = ({ isSidebar }: { isSidebar?: boolean }) => {
   return (
     <h1 className="relative w-full">
       <Link
-        href={'/'}
+        href={'https://techwithkunal.com'}
+        target='_blank'
+        rel='noreferrer noopener'
         aria-label={`${publication.title} blog home page`}
         className="flex flex-row items-center justify-center gap-3"
       >
