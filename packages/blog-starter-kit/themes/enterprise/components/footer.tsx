@@ -6,26 +6,6 @@ import Image from 'next/image';
 export const Footer = () => {
   const FOOTER_LINKS = [
     {
-      name: 'Courses',
-      links: [
-        {
-          name: 'Data Structures & Algorithms',
-          url: 'https://youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ&si=uLbn3WbjuzBAqmt8',
-          openInNewPage: true,
-        },
-        {
-          name: 'DevOps',
-          url: 'https://youtube.com/playlist?list=PL9gnSGHSqcnoqBXdMwUTRod4Gi3eac2Ak&si=yjQNeFziZFkv9Ed2',
-          openInNewPage: true,
-        },
-        {
-          name: 'Git & GitHub',
-          url: 'https://youtu.be/apGV9Kg7ics?si=5Fpqcpa_665QMtOl',
-          openInNewPage: true,
-        },
-      ],
-    },
-    {
       name: 'Socials',
       links: [
         {
@@ -44,8 +24,38 @@ export const Footer = () => {
           openInNewPage: true,
         },
         {
+          name: 'GitHub',
+          url: 'https://github.com/kunal-kushwaha',
+          openInNewPage: true,
+        },
+        {
           name: 'Instagram',
           url: 'https://www.instagram.com/kunalsig/',
+          openInNewPage: true,
+        },
+      ],
+    },
+    {
+      name: 'Other',
+      links: [
+        {
+          name: 'Reddit',
+          url: 'https://www.reddit.com/user/KunalsReddit/',
+          openInNewPage: true,
+        },
+        {
+          name: 'YouTube Hindi',
+          url: 'https://www.youtube.com/@KunalHindi',
+          openInNewPage: true,
+        },
+        {
+          name: 'GitHub Stars',
+          url: 'https://stars.github.com/profiles/kunal-kushwaha/',
+          openInNewPage: true,
+        },
+        {
+          name: 'Credly',
+          url: 'https://www.credly.com/users/kunalkushwaha/badges',
           openInNewPage: true,
         },
       ],
@@ -56,26 +66,26 @@ export const Footer = () => {
         {
           name: 'Home',
           url: 'https://techwithkunal.com',
-          openInNewPage: true,
+          openInNewPage: true
         },
         {
           name: 'Blog',
-          url: 'https://techwithkunal.com/blog',
-          openInNewPage: true,
+          url: '/',
         },
         {
           name: 'Sponsorships',
           url: 'https://techwithkunal.com#sponsorships',
-          openInNewPage: true,
+          openInNewPage: true
         },
         {
           name: 'Courses',
-          url: 'https://techwithkunal.com#courses',
-          openInNewPage: true,
+          url: 'https://techwithkunal.com/courses',
+          openInNewPage: true
         },
       ],
     },
-  ]; return (
+  ];
+  return (
     <footer className="pt-10 md:pt-12 lg:pt-14 pb-6 md:pb-8 lg:pb-10 bg-slate-800 text-slate-200">
       <Container className="px-5">
         <div className="flex justify-between items-start gap-20 md:10 flex-col md:flex-row">
