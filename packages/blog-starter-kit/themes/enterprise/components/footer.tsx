@@ -24,11 +24,6 @@ export const Footer = () => {
 					openInNewPage: true,
 				},
 				{
-					name: 'GitHub',
-					url: 'https://github.com/kunal-kushwaha',
-					openInNewPage: true,
-				},
-				{
 					name: 'Instagram',
 					url: 'https://www.instagram.com/kunalsig/',
 					openInNewPage: true,
@@ -39,7 +34,7 @@ export const Footer = () => {
 			name: 'Other',
 			links: [
 				{
-					name: 'Reddit',
+					name: 'GitHub',
 					url: 'https://github.com/kunal-kushwaha',
 					openInNewPage: true,
 				},
