@@ -105,7 +105,7 @@ const config = {
 		return await getRedirectionRules();
 	},
 	env: {
-		NEXT_PUBLIC_VERSION: Date.now()
+		NEXT_PUBLIC_BUILD_ID: Date.now()
 	}
 };
 

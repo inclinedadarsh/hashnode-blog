@@ -214,6 +214,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 			initialAllPosts,
 			initialPageInfo: publication.posts.pageInfo,
 		},
-		revalidate: 1,
+		revalidate: 10,
 	};
 };
