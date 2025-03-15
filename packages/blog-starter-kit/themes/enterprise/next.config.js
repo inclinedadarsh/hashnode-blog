@@ -59,6 +59,19 @@ const getRedirectionRules = async () => {
  * @type {import('next').NextConfig}
  */
 const config = {
+	async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "s-maxage=1, stale-while-revalidate",
+          },
+        ],
+      },
+    ];
+  },
 	transpilePackages: ['@starter-kit/utils'],
 	basePath: getBasePath(),
 	experimental: {
