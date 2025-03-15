@@ -29,3 +29,5 @@ Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_mediu
 - [ ] Pagination
 - [ ] Vercel Deploy Button
 - [ ] Submit as Template
+
+Small change
