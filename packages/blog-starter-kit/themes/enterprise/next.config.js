@@ -104,6 +104,9 @@ const config = {
 	async redirects() {
 		return await getRedirectionRules();
 	},
+	env: {
+		NEXT_PUBLIC_VERSION: Date.now()
+	}
 };
 
 module.exports = config;

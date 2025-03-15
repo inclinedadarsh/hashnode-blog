@@ -206,6 +206,8 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 	}
 	const initialAllPosts = publication.posts.edges.map((edge) => edge.node);
 
+	console.log(initialAllPosts)
+
 	return {
 		props: {
 			publication,
